@@ -33,8 +33,6 @@ RUN \
 
 VOLUME ["/data"]
 
-EXPOSE 8989
-
 COPY run.sh /
 RUN chmod a+x /run.sh
 
