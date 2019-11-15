@@ -20,7 +20,7 @@ RUN \
     && echo "*** Download package ***" \
     && curl -o \
               /tmp/sonarr.tar.gz -L \
-	      "https://download.sonarr.tv/v2/${SONARR_BRANCH}/mono/NzbDrone.master.${SONARR_VERSION}.mono.tar.gz" \
+	      "https://download.sonarr.tv/v2/master/mono/NzbDrone.master.${SONARR_VERSION}.mono.tar.gz" \
     && echo "*** Unpack package ***" \
     && tar xf \
               /tmp/sonarr.tar.gz -C \
