@@ -32,7 +32,6 @@ RUN \
         /var/tmp/* \
 
 
-#COPY run.sh /
-#RUN chmod a+x /run.sh
+COPY rootfs/ /
 
-CMD [ "/bin/bash" ]
+EXPOSE 8989
