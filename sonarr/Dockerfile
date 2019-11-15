@@ -26,7 +26,7 @@ RUN \
               /tmp/sonarr.tar.gz -C \
 	      /opt/NzbDrone --strip-components=1 \
     && echo "*** Cleanup ***" \
-    && rm -rf \
+    && rm -rf --no-preserve-root \
         /tmp/* \
         /var/lib/apt/lists/* \
         /var/tmp/* \
