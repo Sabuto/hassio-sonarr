@@ -31,9 +31,9 @@ RUN \
         /var/lib/apt/lists/* \
         /var/tmp/*
 
-
-COPY rootfs/ /
-
 VOLUME ["/data"]
 
 EXPOSE 8989
+
+COPY run.sh /
+RUN chmod a+x /run.sh
