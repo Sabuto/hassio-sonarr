@@ -17,7 +17,7 @@ RUN \
     && apt-get install -y --no-install-recommends curl bzip2 ca-certificates-mono libcurl4-openssl-dev mono-devel mono-vbnc python sqlite3 unzip \
     && echo "*** Install Sonarr ***" \
     && mkdir -p /opt/NzbDrone \
-    && echo "*** Download package ***"
+    && echo "*** Download package ***" \
     && curl -o \
               /tmp/sonarr.tar.gz -L \
 	      "https://download.sonarr.tv/v2/${SONARR_BRANCH}/mono/NzbDrone.master.${SONARR_VERSION}.mono.tar.gz" \
