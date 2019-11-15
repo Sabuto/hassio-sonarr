@@ -1,0 +1,13 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - chmod +x build.sh
+
+jobs:
+  include:
+    - stage: Build Docker Images
+      script:
+        - $TRAVIS_BUILD_DIR/build.sh
