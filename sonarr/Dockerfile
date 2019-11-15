@@ -14,14 +14,22 @@ RUN \
     && echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | tee /etc/apt/sources.list.d/mono-official-stable.list \
     && echo "*** Install packages ***" \
     && apt-get update \
-    && apt-get install -y --no-install-recommends bzip2 ca-certificates-mono libcurl4-openssl-dev mono-devel mono-vbnc python sqlite3 unzip \
+    && apt-get install -y --no-install-recommends curl bzip2 ca-certificates-mono libcurl4-openssl-dev mono-devel mono-vbnc python sqlite3 unzip \
+    && echo "*** Install Sonarr ***" \
+    && mkdir -p /opt/NzbDrone \
+    && echo "*** Download package ***"
+    && curl -o \
+              /tmp/sonarr.tar.gz -L \
+	      "https://download.sonarr.tv/v2/${SONARR_BRANCH}/mono/NzbDrone.master.${SONARR_VERSION}.mono.tar.gz" \
+    && echo "*** Unpack package ***" \
+    && tar xf \
+              /tmp/sonarr.tar.gz -C \
+	      /opt/NzbDrone --strip-components=1 \
     && echo "*** Cleanup ***" \
     && rm -rf \
         /tmp/* \
         /var/lib/apt/lists/* \
         /var/tmp/* \
-    && echo "*** Install Sonarr ***" \
-    && mkdir -p /opt/NzbDrone
 
 
 #COPY run.sh /
