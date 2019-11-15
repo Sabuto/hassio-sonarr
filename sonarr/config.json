@@ -3,10 +3,16 @@
   "version": "dev",
   "slug": "hassio_sonarr",
   "description" : "An addon to add sonarr to hassio",
-  "url" : "https://github.com/Sabuto/hassio-telegraf",
+  "url" : "https://github.com/Sabuto/hassio-sonarr",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "before",
   "boot": "auto",
+  "webui": "http://[HOST]:[PORT:8989]",
+  "map": [
+    "backup:rw",
+    "share:rw",
+    "ssl"
+  ],
   "hassio_api": true,
   "hassio_role": "default",
   "auth_api": true,
@@ -15,6 +21,11 @@
   "apparmor": false,
   "options": {},
   "schema": {},
-  "ports" : {},
+  "ports" : {
+    "8989:tcp":8000
+  },
+  "ports_description" : {
+    "8989/tcp": "Port for the web interface"
+  },
   "image" : "sabuto/{arch}-hassio-sonarr"
 }

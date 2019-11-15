@@ -34,4 +34,6 @@ RUN \
 
 COPY rootfs/ /
 
+VOLUME ["/data"]
+
 EXPOSE 8989

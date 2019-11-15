@@ -6,8 +6,16 @@ services:
 before_install:
   - chmod +x build.sh
 
+branches:
+  only:
+  - dev
+
 jobs:
   include:
     - stage: Build Docker Images
       script:
         - $TRAVIS_BUILD_DIR/build.sh
+    - stage: Deploys Docker Images to Docker Hub
+      script:
+        - $TRAVIS_BUILD_DIR/dist.sh
+
