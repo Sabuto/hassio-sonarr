@@ -15,5 +15,6 @@
   "apparmor": false,
   "options": {},
   "schema": {},
-  "ports" : {}
+  "ports" : {},
+  "image" : "sabuto/{arch}-hassio-sonarr"
 }
