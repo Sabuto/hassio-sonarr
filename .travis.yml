@@ -6,12 +6,15 @@ services:
 before_install:
   - chmod +x build.sh
   - chmod +x dist.sh
+  - npm install jsonlint
 branches:
   only:
   - dev
 
 jobs:
   include:
+    - stage: Json Lint
+      script: npm run jsonlint
     - stage: Build Docker Images
       script:
         - $TRAVIS_BUILD_DIR/build.sh
