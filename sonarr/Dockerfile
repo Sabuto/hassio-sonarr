@@ -31,12 +31,10 @@ RUN \
         /var/lib/apt/lists/* \
         /var/tmp/* \
         /etc/nginx \
+    && echo "*** make nginx log dir ***" \
     && mkdir -p /var/log/nginx \
+    && echo "*** make nginx log file ***" \
     && touch /var/log/nginx/error.log \
-    && git clone --depth 1 -b "4.0" "https://github.com/home-assistant/hassio-auth" \
-    && cp -f hassio-auth/nginx-frontend/ha-auth.lua /etc/nginx/ \
-    && cp -f hassio-auth/nginx-frontend/example/nginx-ingress.conf /etc/nginx/ \
-    && rm -fr /usr/src/hassio-auth \
     && luarocks install lua-resty-http
 
 VOLUME ["/data"]
