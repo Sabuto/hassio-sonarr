@@ -32,7 +32,7 @@ RUN \
         /var/tmp/* \
         /etc/nginx \
     && mkdir -p /var/log/nginx \
-    && touch /var/log/nginx/error.log
+    && touch /var/log/nginx/error.log \
     && git clone --depth 1 -b "4.0" "https://github.com/home-assistant/hassio-auth" \
     && cp -f hassio-auth/nginx-frontend/ha-auth.lua /etc/nginx/ \
     && cp -f hassio-auth/nginx-frontend/example/nginx-ingress.conf /etc/nginx/ \
