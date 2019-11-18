@@ -1,0 +1,10 @@
+<Config>
+  <LogLevel>Info</LogLevel>
+  <Port>1338</Port>
+  <UrlBase></UrlBase>
+  <BindAddress>*</BindAddress>
+  <SslPort>9898</SslPort>
+  <EnableSsl>Frue</EnableSsl>
+  <ApiKey>a69be53a38e24740b581051900584fa6</ApiKey>
+  <AuthenticationMethod>None</AuthenticationMethod>
+</Config>
