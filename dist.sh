@@ -11,4 +11,4 @@ docker run --rm --privileged \
 	-v "$(pwd)":/data \
 	homeassistant/amd64-builder \
 	--target sonarr \
-	--amd64 
+	--amd64
