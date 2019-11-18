@@ -7,7 +7,7 @@
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "before",
   "boot": "auto",
-  "webui": "http://[HOST]:[PORT:8989]",
+  "webui": "http://[HOST]:[PORT:80]",
   "map": [
     "backup:rw",
     "share:rw",
@@ -19,13 +19,15 @@
   "host_network": true,
   "host_pid": true,
   "apparmor": false,
+  "ingress": true,
+  // "ingress_port": 6632,
   "options": {},
   "schema": {},
   "ports" : {
-    "8989:tcp":8000
+    "8989:tcp":null
   },
   "ports_description" : {
-    "8989/tcp": "Port for the web interface"
+    "80/tcp": "Port for the web interface (not needed with ingress)"
   },
   "image" : "sabuto/{arch}-hassio-sonarr"
 }
