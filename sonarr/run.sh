@@ -1,4 +1,11 @@
 #!/usr/bin/env bashio
+declare port
+declare certfile
+declare hassio_dns
+declare ingress_interface
+declare ingress_port
+declare ingress_entry
+
 WAIT_PIDS=()
 
 bashio::log.info "Setting up frontend...."
