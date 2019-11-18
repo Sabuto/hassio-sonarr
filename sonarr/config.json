@@ -23,7 +23,8 @@
   "options": {},
   "schema": {},
   "ports" : {
-    "8989:tcp":null
+    "80/tcp":null
+
   },
   "ports_description" : {
     "80/tcp": "Port for the web interface (not needed with ingress)"
