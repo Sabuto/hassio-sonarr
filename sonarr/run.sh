@@ -10,10 +10,20 @@ WAIT_PIDS=()
 
 bashio::log.info "Setting up frontend...."
 
-sed -i "s/%%PORT%%/8080/g" /etc/nginx/nginx-ingress.conf
-sed -i "s/%%PORT_INGRESS%%/8099/g" /etc/nginx/nginx-ingress.conf
+port=$(bashio::addon.port 80)
+ingress_entry=$(bashio::addon.ingress_entry)
+mv /etc/nginx/servers/direct.disabled /etc/nginx/servers/direct.conf
 
-nginx -c /etc/nginx/nginx-ingress.conf &
+ingress_port=$(bashio::addon.ingress_port)
+ingress_interface=$(bashio::addon.ip_address)
+sed -i "s/%%port%%/${ingress_port}/g" /etc/nginx/servers/ingress.conf
+sed -i "s/%%interface%%/${ingress_interface}/g" /etc/nginx/servers/ingress.conf
+sed -i "s#%%ingress_entry%%#${ingress_entry}#g" /etc/nginx/servers/ingress.conf
+
+hassio_dns=$(bashio::dns.host)
+sed -i "s/%%hassio_dns%%/${hassio_dns}/g" /etc/nginx/includes/resolver.conf
+
+exec nginx &
 WAIT_PIDS+=($!)
 
 bashio::log.info "Starting the Sonarr addon...."

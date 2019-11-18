@@ -1,0 +1,1 @@
+docker run --rm -v "$(pwd)":/data cytopia/jsonlint -t '  ' -i '*.terraform/*' *.json
