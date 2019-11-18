@@ -20,7 +20,6 @@
   "host_pid": true,
   "apparmor": false,
   "ingress": true,
-  // "ingress_port": 6632,
   "options": {},
   "schema": {},
   "ports" : {
