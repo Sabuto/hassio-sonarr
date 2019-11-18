@@ -12,7 +12,12 @@ bashio::log.info "Setting up frontend...."
 
 port=$(bashio::addon.port 80)
 ingress_entry=$(bashio::addon.ingress_entry)
-mv /etc/nginx/servers/direct.disabled /etc/nginx/servers/direct.conf
+if bashio::var.has_value "${port}"; then
+	mv /etc/nginx/servers/direct.disabled /etc/nginx/servers/direct.conf
+
+	sed -i "s#%%ingress_entry%%#${ingress_entry}#g" /etc/nginx/servers/direct.conf
+fi
+
 
 ingress_port=$(bashio::addon.ingress_port)
 ingress_interface=$(bashio::addon.ip_address)
