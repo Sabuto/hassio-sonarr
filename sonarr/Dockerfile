@@ -41,7 +41,6 @@ RUN \
 
 VOLUME ["/data"]
 
-COPY run.sh /
 COPY rootfs /
 RUN chmod a+x /run.sh
 
