@@ -8,7 +8,7 @@ declare ingress_entry
 
 WAIT_PIDS=()
 
-if [ ! -f "config/config.xml" ]; then
+if [ ! -f "/sonarr/config.xml" ]; then
 	bashio::exit.nok "config not found exiting"
 fi
 
