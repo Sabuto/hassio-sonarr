@@ -37,8 +37,6 @@ RUN \
     && touch /var/log/nginx/error.log \
     && luarocks install lua-resty-http
 
-VOLUME ["/data"]
-
 COPY rootfs /
 RUN chmod a+x /run.sh
 

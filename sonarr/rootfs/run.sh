@@ -8,6 +8,10 @@ declare ingress_entry
 
 WAIT_PIDS=()
 
+if [ -f "data/config.xml"]; then
+	bashio::exit.nok "config not found exiting"
+fi
+
 bashio::log.info "Setting up frontend...."
 
 port=$(bashio::addon.port 80)
