@@ -8,9 +8,9 @@ declare ingress_entry
 
 WAIT_PIDS=()
 
-# if [ ! -f "/data/config.xml" ]; then
-# 	# mv /etc/sonarr/config.xml /data/config.xml
-# fi
+if [ ! -f "/data/config.xml" ]; then
+	mv /etc/sonarr/config.xml /data/config.xml
+fi
 
 bashio::log.info "Setting up frontend...."
 
