@@ -1,7 +1,7 @@
 <Config>
   <LogLevel>Info</LogLevel>
   <Port>8889</Port>
-  <UrlBase></UrlBase>
+  <UrlBase>%%ingress_entry%%</UrlBase>
   <BindAddress>127.0.0.1</BindAddress>
   <SslPort>9898</SslPort>
   <EnableSsl>False</EnableSsl>
