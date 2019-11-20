@@ -4,7 +4,7 @@
   <UrlBase>%%ingress_entry%%</UrlBase>
   <BindAddress>*</BindAddress>
   <SslPort>9898</SslPort>
-  <EnableSsl>False</EnableSsl>
+  <EnableSsl>True</EnableSsl>
   <ApiKey>a69be53a38e24740b581051900584fa6</ApiKey>
   <AuthenticationMethod>None</AuthenticationMethod>
 </Config>
