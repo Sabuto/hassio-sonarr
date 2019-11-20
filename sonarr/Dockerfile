@@ -38,7 +38,6 @@ RUN \
     && luarocks install lua-resty-http
 
 COPY rootfs /
-COPY config.xml /data
 RUN chmod a+x /run.sh
 
 CMD ["/run.sh"]
