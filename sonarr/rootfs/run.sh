@@ -41,8 +41,8 @@ bashio::log.info "Starting the Sonarr addon...."
 
 cd /opt/NzbDrone || bashio::exit.nok "setup gone wrong!"
 
-#exec mono --debug NzbDrone.exe -nobrowser -data=/data &
-#WAIT_PIDS+=($!)
+exec mono --debug NzbDrone.exe -nobrowser -data=/data &
+WAIT_PIDS+=($!)
 
 function stop_addon() {
 	bashio::log.info "Kill Processes..."
