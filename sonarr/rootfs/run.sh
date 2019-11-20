@@ -9,7 +9,7 @@ declare ingress_entry
 WAIT_PIDS=()
 
 if [ ! -f "/data/config.xml" ]; then
-	bashio::exit.nok "config not found exiting"
+	mv /etc/sonarr/config.xml /data/config.xml
 fi
 
 bashio::log.info "Setting up frontend...."
@@ -40,7 +40,7 @@ bashio::log.info "Starting the Sonarr addon...."
 
 cd /opt/NzbDrone || bashio::exit.nok "setup gone wrong!"
 
-exec mono --debug NzbDrone.exe -nobrowser -data=/etc/sonarr &
+exec mono --debug NzbDrone.exe -nobrowser -data=/data &
 WAIT_PIDS+=($!)
 
 function stop_addon() {
