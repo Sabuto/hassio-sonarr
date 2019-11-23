@@ -41,7 +41,7 @@ To get the add-on running:
 ## Configuration
 
 **Note**: _Remember to restart the add-on when the configuration is changed._
-**Note**: _This section is still incomplete!
+This section is still incomplete!
 Example add-on configuration, with all available options:
 
 ```json
