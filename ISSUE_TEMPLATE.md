@@ -1,3 +1,5 @@
+What is this new issue for?
+
 - [ ] ISSUE
 - [ ] FEATURE REQUEST
 
