@@ -1,12 +1,33 @@
-#Type of Issue
-<!--- Is this a feature request or an issue? ---!>
+What is this new issue for?
 
-#Description of issue
+- [ ] ISSUE
+- [ ] FEATURE REQUEST
 
+# Issue
 
-#Ideas to fix
-<!--- if you have nay ideas to fix this issue please specify them here ---!>
+> (Is this a feature request or an issue? If an issue, please describe it)
 
+### Expected behaviour
 
-# Logs
-<!--- please past the logs here ---!>
+> (What you expected to happen)
+
+### Actual behaviour
+
+> (What actually happened)
+
+### Steps to reproduce
+
+> (How can someone else make/see it happen)
+
+### Device Details
+
+> (What device is this add-on running on and what version of Hass.io are you running
+
+### Proposed changes
+
+> (If you have a proposed change, workaround or fix,
+> describe the rationale behind it)
+
+### Logs
+
+> (Paste any relevant log details here)
